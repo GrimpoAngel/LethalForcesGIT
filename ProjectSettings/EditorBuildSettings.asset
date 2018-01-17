@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/BeatEmUp_GameTemplate3D/Cinematic_Intro.unity
     guid: cea08c0ef3c6c4f4f82a6baf4189bfbc
   - enabled: 1

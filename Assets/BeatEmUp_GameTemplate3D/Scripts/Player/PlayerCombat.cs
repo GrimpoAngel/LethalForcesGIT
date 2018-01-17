@@ -21,6 +21,7 @@ public class PlayerCombat : MonoBehaviour, IDamagable<DamageObject> {
 	public DamageObject[] PunchCombo; //a list of punch attacks
 	public DamageObject[] KickCombo; //a list of kick Attacks
 	public DamageObject JumpKickData; //jump kick Attack
+    public DamageObject JumpPunchData; // jump punch Attack - LETHAL FORCES
 	public DamageObject GroundPunchData; //Ground punch Attack
 	public DamageObject GroundKickData; //Ground kick Attack
 	private DamageObject lastAttack; //data from the last attack that has taken place
@@ -137,6 +138,7 @@ public class PlayerCombat : MonoBehaviour, IDamagable<DamageObject> {
 		if (!invulnerableDuringJump) {
 			HitableStates.Add (UNITSTATE.JUMPING);
 			HitableStates.Add (UNITSTATE.JUMPKICK);
+            HitableStates.Add(UNITSTATE.JUMPPUNCH); //LETHAL FORCES - can not be hurt during jump punch
 		}
 	}
 
@@ -222,21 +224,21 @@ public class PlayerCombat : MonoBehaviour, IDamagable<DamageObject> {
 				}
 			}
 
-			//jump punch
-			if (action == INPUTACTION.PUNCH && !isGrounded) {
-				if(JumpKickData.animTrigger.Length > 0) {	
-					doAttack(JumpKickData, UNITSTATE.JUMPKICK, INPUTACTION.KICK);
-					StartCoroutine(JumpKickInProgress());
-				}
-				return;
-			}
+            //jump punch - LETHAL FORCES
+            if (action == INPUTACTION.PUNCH && !isGrounded) {
+                if (JumpPunchData.animTrigger.Length > 0) {
+                    doAttack(JumpPunchData, UNITSTATE.JUMPPUNCH, INPUTACTION.PUNCH);
+                    StartCoroutine(JumpPunchInProgress());
+                }
+                return;
+            }
 
-			//jump kick
-			if (action == INPUTACTION.KICK && !isGrounded) {
+            //jump kick
+            if (action == INPUTACTION.KICK && !isGrounded) {
 				if(JumpKickData.animTrigger.Length > 0) {
 					doAttack(JumpKickData, UNITSTATE.JUMPKICK, INPUTACTION.KICK);
 					StartCoroutine(JumpKickInProgress());
-				}
+                }
 				return;
 			}
 
@@ -287,6 +289,7 @@ public class PlayerCombat : MonoBehaviour, IDamagable<DamageObject> {
 		TurnToDir(currentDirection);
 		SetVelocity(Vector3.zero);
 		if(state == UNITSTATE.JUMPKICK)	return;
+        if (state == UNITSTATE.JUMPPUNCH) return; //LETHAL FORCES - adding Jump Punch
 		Invoke ("Ready", d.duration);
 	}
 
@@ -363,9 +366,51 @@ public class PlayerCombat : MonoBehaviour, IDamagable<DamageObject> {
 			yield return null;
 		}
 	}
+    //LETHAL FORCES - Add a JUMP PUNCH!
+    IEnumerator JumpPunchInProgress()
+    {
+        animator.SetAnimatorBool("JumpPunchActive", true);
 
-	//set defence on/off
-	private void Defend(bool defend){
+        //a list of enemies that we have hit
+        List<GameObject> enemieshit = new List<GameObject>();
+
+        //small delay so the animation has time to play
+        yield return new WaitForSeconds(.1f);
+
+        //check for hit
+        while (playerState.currentState == UNITSTATE.JUMPPUNCH)
+        {
+
+            //draw a hitbox in front of the character to see which objects it collides with
+            Vector3 boxPosition = transform.position + (Vector3.up * lastAttack.collHeight) + Vector3.right * ((int)currentDirection * lastAttack.collDistance);
+            Vector3 boxSize = new Vector3(lastAttack.CollSize / 2, lastAttack.CollSize / 2, hitZRange / 2);
+            Collider[] hitColliders = Physics.OverlapBox(boxPosition, boxSize, Quaternion.identity, HitLayerMask);
+
+            //hit an enemy only once by adding it to the list of enemieshit
+            foreach (Collider col in hitColliders)
+            {
+                if (!enemieshit.Contains(col.gameObject))
+                {
+                    enemieshit.Add(col.gameObject);
+
+                    //hit a damagable object
+                    IDamagable<DamageObject> damagableObject = col.GetComponent(typeof(IDamagable<DamageObject>)) as IDamagable<DamageObject>;
+                    if (damagableObject != null)
+                    {
+                        damagableObject.Hit(lastAttack);
+
+                        //camera Shake
+                        CamShake camShake = Camera.main.GetComponent<CamShake>();
+                        if (camShake != null) camShake.Shake(.1f);
+                    }
+                }
+            }
+            yield return null;
+        }
+    }
+
+    //set defence on/off
+    private void Defend(bool defend){
 		animator.SetAnimatorBool("Defend", defend);
 		if (defend) {
 

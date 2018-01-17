@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: a63bdd3fb08609e45ad617de8e4469f4
-timeCreated: 1512837220
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Ankle_L
     100002: Ankle_R
@@ -98,6 +96,9 @@ ModelImporter:
     100180: weap_RHand
     100182: Wrist_L
     100184: Wrist_R
+    100186: armor_Hip_B
+    100188: armor_Hip_F
+    100190: helmetVisor
     400000: Ankle_L
     400002: Ankle_R
     400004: Chest_M
@@ -191,12 +192,18 @@ ModelImporter:
     400180: weap_RHand
     400182: Wrist_L
     400184: Wrist_R
+    400186: armor_Hip_B
+    400188: armor_Hip_F
+    400190: helmetVisor
     7400000: batonSwingHorizontal_Boss
     9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -232,6 +239,8 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -258,25 +267,31 @@ ModelImporter:
       loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.47585487
+      - time: 0.4653313
         functionName: PlaySFX
-        data: 
-        objectReferenceParameter: {fileID: 8300000, guid: e847fd82c67d89c4fbc267c8cd96a684,
-          type: 3}
+        data: Whoosh
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.53950846
+      - time: 0.5423729
         functionName: Check4Hit
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.531587
+        functionName: AddForce
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0.5
         intParameter: 0
         messageOptions: 0
       transformMask:
@@ -595,6 +610,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

@@ -15,6 +15,7 @@ public enum UNITSTATE {
 	JUMPING,
 	LAND,
 	JUMPKICK,
+    JUMPPUNCH,
 	PUNCH,
 	KICK,
 	ATTACK,

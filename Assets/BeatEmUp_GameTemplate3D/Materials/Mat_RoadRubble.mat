@@ -100,7 +100,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IlumStrength: 1
+    - _IlumStrength: 1.835
     - _LightStrength: 1
     - _MatCapStrength: 1.33
     - _Metallic: 0

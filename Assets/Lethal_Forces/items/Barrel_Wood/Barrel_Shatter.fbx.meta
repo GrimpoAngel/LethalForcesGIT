@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: 39e905ab668923c47a737c675f1cb1fb
+timeCreated: 1515632202
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Barrel_Shard_01
+    100002: Barrel_Shard_02
+    100004: Barrel_Shard_03
+    100006: Barrel_Shard_04
+    100008: Barrel_Shard_05
+    100010: Barrel_Shard_06
+    100012: //RootNode
+    100014: shard1
+    100016: shard2
+    100018: shard3
+    100020: shard4
+    100022: shard5
+    100024: bulletSolver1
+    100026: GFX
+    100028: pPlane1
+    400000: Barrel_Shard_01
+    400002: Barrel_Shard_02
+    400004: Barrel_Shard_03
+    400006: Barrel_Shard_04
+    400008: Barrel_Shard_05
+    400010: Barrel_Shard_06
+    400012: //RootNode
+    400014: shard1
+    400016: shard2
+    400018: shard3
+    400020: shard4
+    400022: shard5
+    400024: bulletSolver1
+    400026: GFX
+    400028: pPlane1
+    2300000: Barrel_Shard_01
+    2300002: Barrel_Shard_02
+    2300004: Barrel_Shard_03
+    2300006: Barrel_Shard_04
+    2300008: Barrel_Shard_05
+    2300010: Barrel_Shard_06
+    2300012: shard1
+    2300014: shard2
+    2300016: shard3
+    2300018: shard4
+    2300020: shard5
+    2300022: pPlane1
+    3300000: Barrel_Shard_01
+    3300002: Barrel_Shard_02
+    3300004: Barrel_Shard_03
+    3300006: Barrel_Shard_04
+    3300008: Barrel_Shard_05
+    3300010: Barrel_Shard_06
+    3300012: shard1
+    3300014: shard2
+    3300016: shard3
+    3300018: shard4
+    3300020: shard5
+    3300022: pPlane1
+    4300000: Barrel_Shard_06
+    4300002: Barrel_Shard_05
+    4300004: Barrel_Shard_04
+    4300006: Barrel_Shard_03
+    4300008: Barrel_Shard_02
+    4300010: Barrel_Shard_01
+    4300012: shard1
+    4300014: shard2
+    4300016: shard3
+    4300018: shard4
+    4300020: shard5
+    4300022: pPlane1
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.2
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 9cc48d4de7a75d240bde65150b10d0db
-timeCreated: 1514736471
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Ankle_L
     100002: Ankle_R
@@ -199,10 +197,13 @@ ModelImporter:
     400190: Wrist_R
     7400000: combat_walkF
     9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -217,13 +218,19 @@ ModelImporter:
       : position error = 69.584770 mm\n\t'Toes_L' : position error = 28.998310 mm\nCopied
       Avatar Rig Configuration mis-match. Inbetween bone rotation in copied configuration
       does not match rotation in animation file:\n\t'HipPart1_L' : rotation error
-      = 6.650454 deg\n\t'HipPart2_L' : rotation error = 6.650454 deg\n"
+      = 6.555145 deg\n\t'HipPart2_L' : rotation error = 6.555145 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
       improve retargeting quality.\n\t'HipPart1_R' is inbetween humanoid transforms
       and has rotation animation that will be discarded.\n\t'HipPart2_R' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'RootPart1_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Spine1Part1_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ShoulderPart1_R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ShoulderPart2_R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ElbowPart1_R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Wrist_R'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ShoulderPart1_L'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ShoulderPart2_L'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ElbowPart1_L'
@@ -233,6 +240,8 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -248,35 +257,35 @@ ModelImporter:
       lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: -0.15
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5223421
-        functionName: PlaySFX
-        data: 
-        objectReferenceParameter: {fileID: 8300000, guid: 8b2a3e572b7fa9c47ba81d142c669471,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.98459166
         functionName: PlaySFX
         data: 
         objectReferenceParameter: {fileID: 8300000, guid: d9d3d738834902d4da8c2e029df0df08,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4807396
+        functionName: PlaySFX
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: e2ea5c7996fa1c249b0e7c800aa86f1a,
           type: 3}
         floatParameter: 0
         intParameter: 0
@@ -597,6 +606,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

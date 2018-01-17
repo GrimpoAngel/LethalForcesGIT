@@ -30,7 +30,7 @@ public class LevelInit : MonoBehaviour {
 		//create InputManager
 		if(!GameObject.FindObjectOfType<InputManager>() && createInputManager) GameObject.Instantiate(Resources.Load("InputManager"), Vector3.zero, Quaternion.identity);
         
-        //create InputManager Player 2
+        //create InputManager Player 2 - LETHAL FORCES
         if (!GameObject.FindObjectOfType<InputManager_P2>() && createInputManager_P2) GameObject.Instantiate(Resources.Load("InputManager_P2"), Vector3.zero, Quaternion.identity);
 
         //create UI
@@ -46,7 +46,27 @@ public class LevelInit : MonoBehaviour {
 		if(!string.IsNullOrEmpty(showMenuAtStart)) ShowMenuAtStart();
 	}
 
-	void PlayMusic() {
+    //LETHAL FORCES - Press ESC show Pause
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ShowPauseMenu();
+        }
+        
+    }
+
+    //LETHAL FORCES - Pause Menu
+    void ShowPauseMenu()
+    {
+        UIManager UI = GameObject.FindObjectOfType<UIManager>();
+        UI.DisableAllScreens();
+        UI.ShowMenu("Pause_Menu");
+        Time.timeScale = 0;
+    }
+
+
+    void PlayMusic() {
 		if(audioplayer != null)	audioplayer.GetComponent<BeatEmUpTemplate.AudioPlayer>().playMusic(LevelMusic);
 	}
 

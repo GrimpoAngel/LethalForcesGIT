@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: f3e67482e7832fc40a008f19e2b3b5b1
-timeCreated: 1511029793
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Ankle_L
     100002: Ankle_R
@@ -189,10 +187,13 @@ ModelImporter:
     400180: Wrist_R
     7400000: idleReady_player
     9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -201,12 +202,45 @@ ModelImporter:
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
-      rotation in copied configuration does not match rotation in animation file:\n\t'HipPart2_L'
-      : rotation error = 5.117504 deg\n"
+      rotation in copied configuration does not match rotation in animation file:\n\t'HipPart1_L'
+      : rotation error = 5.117504 deg\n\t'HipPart2_L' : rotation error = 5.117504
+      deg\n"
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'HipPart1_R' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'HipPart2_R' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'RootPart1_M'
+      has translation animation that will be discarded.\n\t'RootPart1_M' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'RootPart1_M'
+      has scale animation that will be discarded.\n\t'RootPart2_M' has translation
+      animation that will be discarded.\n\t'RootPart2_M' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'RootPart2_M' has scale
+      animation that will be discarded.\n\t'Spine1_M' has translation animation that
+      will be discarded.\n\t'Spine1_M' has scale animation that will be discarded.\n\t'Spine1Part1_M'
+      has translation animation that will be discarded.\n\t'Spine1Part1_M' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Spine1Part1_M'
+      has scale animation that will be discarded.\n\t'Spine1Part2_M' has translation
+      animation that will be discarded.\n\t'Spine1Part2_M' has scale animation that
+      will be discarded.\n\t'Chest_M' has translation animation that will be discarded.\n\t'Scapula_R'
+      has translation animation that will be discarded.\n\t'ShoulderPart1_R' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'ShoulderPart2_R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NeckPart1_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'NeckPart2_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Scapula_L'
+      has translation animation that will be discarded.\n\t'ShoulderPart1_L' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'ShoulderPart2_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ElbowPart1_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ElbowPart2_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Cup_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'HipPart1_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'HipPart2_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Toes_L'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -259,6 +293,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

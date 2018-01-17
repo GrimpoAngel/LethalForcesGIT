@@ -51,6 +51,7 @@ public class PlayerMovement_P2 : MonoBehaviour {
 		UNITSTATE.WALK,
 		UNITSTATE.JUMPING,
 		UNITSTATE.JUMPKICK,
+        UNITSTATE.JUMPPUNCH, //LETHAL FORCES - Adding JUMP PUNCH
 		UNITSTATE.LAND,
 	};
 
@@ -108,7 +109,13 @@ public class PlayerMovement_P2 : MonoBehaviour {
 			rb.velocity = fixedVelocity;
 			updateVelocity = false;
 		}
-	}
+
+        //LETHAL FORCES - using Allow Air Control boolean
+        if (AllowAirControl == true)
+        {
+            MoveAirborne();
+        }
+    }
 
 	//set velocity on next fixed update
 	void SetVelocity(Vector3 velocity) {
@@ -180,7 +187,8 @@ public class PlayerMovement_P2 : MonoBehaviour {
 		animator.SetAnimatorFloat("MovementSpeed", 0f);
 		animator.SetAnimatorBool("JumpInProgress", false);
 		animator.SetAnimatorBool("JumpKickActive", false);
-		animator.ShowDustEffectLand();
+        animator.SetAnimatorBool("JumpPunchActive", false); //LETHAL FORCES - Adding Jump Punch
+        animator.ShowDustEffectLand();
 
 		//sfx
 		GlobalAudioPlayer.PlaySFX("FootStep");

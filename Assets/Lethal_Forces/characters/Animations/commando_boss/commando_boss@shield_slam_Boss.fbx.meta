@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: a63383f2ee9aa1d47ab0cdaeb7a40b68
-timeCreated: 1514482103
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Ankle_L
     100002: Ankle_R
@@ -98,6 +96,9 @@ ModelImporter:
     100180: weap_RHand
     100182: Wrist_L
     100184: Wrist_R
+    100186: armor_Hip_B
+    100188: armor_Hip_F
+    100190: helmetVisor
     400000: Ankle_L
     400002: Ankle_R
     400004: Chest_M
@@ -191,12 +192,18 @@ ModelImporter:
     400180: weap_RHand
     400182: Wrist_L
     400184: Wrist_R
+    400186: armor_Hip_B
+    400188: armor_Hip_F
+    400190: helmetVisor
     7400000: shield_slam_Boss
     9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -235,6 +242,8 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -246,8 +255,8 @@ ModelImporter:
     - serializedVersion: 16
       name: shield_slam_Boss
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 45
+      firstFrame: 3.6
+      lastFrame: 51.1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -261,82 +270,139 @@ ModelImporter:
       loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.37288135
+        functionName: PlaySFX
+        data: Whoosh
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.43451464
+        functionName: Check4Hit
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.44838214
+        functionName: ShowDustEffectLand
+        data: 
+        objectReferenceParameter: {fileID: 115594, guid: 6c925d90c8ae6b148b428e7fe79c3f71,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5023112
+        functionName: CamShake
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0.6
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
       - path: geo
         weight: 0
-      - path: geo/armor_boss
+      - path: geo/Boss_Armor_Set
         weight: 0
-      - path: geo/armor_boss/Boot_panel
+      - path: geo/Boss_Armor_Set/_bolt1
         weight: 0
-      - path: geo/armor_boss/Boot_panel1
+      - path: geo/Boss_Armor_Set/_bolts
         weight: 0
-      - path: geo/armor_boss/chest_Bullets
+      - path: geo/Boss_Armor_Set/_bolts/bolt_BL
         weight: 0
-      - path: geo/armor_boss/chestStraps_Bullets
+      - path: geo/Boss_Armor_Set/_bolts/bolt_BR
         weight: 0
-      - path: geo/armor_boss/Collar
+      - path: geo/Boss_Armor_Set/_bolts/bolt_ChestFL
         weight: 0
-      - path: geo/armor_boss/gauntlet_LArm
+      - path: geo/Boss_Armor_Set/_bolts/bolt_ChestFR
         weight: 0
-      - path: geo/armor_boss/gauntlet_RArm
+      - path: geo/Boss_Armor_Set/_bolts/bolt_FL
         weight: 0
-      - path: geo/armor_boss/hand_plate_L
+      - path: geo/Boss_Armor_Set/_bolts/bolt_FR
         weight: 0
-      - path: geo/armor_boss/hand_plate_L1
+      - path: geo/Boss_Armor_Set/_bolts_L
         weight: 0
-      - path: geo/armor_boss/Helm
+      - path: geo/Boss_Armor_Set/_Collar_L
         weight: 0
-      - path: geo/armor_boss/helm_rail
+      - path: geo/Boss_Armor_Set/_collar_straps_L
         weight: 0
-      - path: geo/armor_boss/Helmet_visor
+      - path: geo/Boss_Armor_Set/_grenade_straps
         weight: 0
-      - path: geo/armor_boss/Knee_Pad
+      - path: geo/Boss_Armor_Set/_grenades
         weight: 0
-      - path: geo/armor_boss/Knee_Pad1
+      - path: geo/Boss_Armor_Set/_grenades1
         weight: 0
-      - path: geo/armor_boss/Leg_Panel
+      - path: geo/Boss_Armor_Set/_grenades2
         weight: 0
-      - path: geo/armor_boss/Leg_Panel1
+      - path: geo/Boss_Armor_Set/_grenades3
         weight: 0
-      - path: geo/armor_boss/Nod_mount
+      - path: geo/Boss_Armor_Set/_Helmet_L
         weight: 0
-      - path: geo/armor_boss/Pauldron_L
+      - path: geo/Boss_Armor_Set/_L_Leg_Knee_Pad
         weight: 0
-      - path: geo/armor_boss/Pauldron_R
+      - path: geo/Boss_Armor_Set/_Leg_Panels
         weight: 0
-      - path: geo/armor_boss/pocket_Rarm1
+      - path: geo/Boss_Armor_Set/_Mag_pouch_L
         weight: 0
-      - path: geo/armor_boss/pocket_Rarm2
+      - path: geo/Boss_Armor_Set/_Mag_pouch_L1
         weight: 0
-      - path: geo/armor_boss/pockets_LHip
+      - path: geo/Boss_Armor_Set/_Mag_pouch_L2
         weight: 0
-      - path: geo/armor_boss/pockets_LowBack
+      - path: geo/Boss_Armor_Set/_Mag_pouch_L3
         weight: 0
-      - path: geo/armor_boss/pockets_RHip
+      - path: geo/Boss_Armor_Set/_Mag_pouch_L4
         weight: 0
-      - path: geo/armor_boss/Shin_Guard
+      - path: geo/Boss_Armor_Set/_Mag_pouch_L5
         weight: 0
-      - path: geo/armor_boss/Shin_Guard1
+      - path: geo/Boss_Armor_Set/_Mag_pouch_L6
         weight: 0
-      - path: geo/armor_boss/shoulder_plate
+      - path: geo/Boss_Armor_Set/_Mag_pouch_L7
         weight: 0
-      - path: geo/armor_boss/shoulderstraps
+      - path: geo/Boss_Armor_Set/_R_Leg_Knee_Pad
         weight: 0
-      - path: geo/armor_boss/SIDE_PLATES
+      - path: geo/Boss_Armor_Set/_shoulderstraps
         weight: 0
-      - path: geo/armor_boss/Throat_Protector
+      - path: geo/Boss_Armor_Set/_SIDE_PLATES
         weight: 0
-      - path: geo/armor_boss/vest
+      - path: geo/Boss_Armor_Set/_Throat_Protector_L
         weight: 0
-      - path: geo/commando_geo_A
+      - path: geo/Boss_Armor_Set/_Visor_L
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_ArmorVest
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_ButtArmor
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_CrochArmor
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_FootArmor_L
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_FootArmor_R
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_gauntlet_L
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_gauntlet_R
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_handArmor_L
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_handArmor_R
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_Pauldron_L
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_Pauldron_R
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_ShinArmor_L
+        weight: 0
+      - path: geo/Boss_Armor_Set/geo_ShinArmor_R
+        weight: 0
+      - path: geo/commando_boss_geo
         weight: 0
       - path: geo/eye_geo_L
         weight: 0
@@ -347,6 +413,10 @@ ModelImporter:
       - path: geo/riotShield
         weight: 0
       - path: Root_M
+        weight: 1
+      - path: Root_M/armor_Hip_B
+        weight: 1
+      - path: Root_M/armor_Hip_F
         weight: 1
       - path: Root_M/Hip_L
         weight: 1
@@ -361,7 +431,7 @@ ModelImporter:
       - path: Root_M/Hip_L/HipPart1_L/HipPart2_L/Knee_L/Ankle_L/Toes_L
         weight: 1
       - path: Root_M/Hip_L/HipPart1_L/HipPart2_L/Knee_L/Ankle_L/Toes_L/ToesEnd_L
-        weight: 0
+        weight: 1
       - path: Root_M/Hip_R
         weight: 1
       - path: Root_M/Hip_R/HipPart1_R
@@ -375,7 +445,7 @@ ModelImporter:
       - path: Root_M/Hip_R/HipPart1_R/HipPart2_R/Knee_R/Ankle_R/Toes_R
         weight: 1
       - path: Root_M/Hip_R/HipPart1_R/HipPart2_R/Knee_R/Ankle_R/Toes_R/ToesEnd_R
-        weight: 0
+        weight: 1
       - path: Root_M/RootPart1_M
         weight: 1
       - path: Root_M/RootPart1_M/RootPart2_M
@@ -403,13 +473,15 @@ ModelImporter:
       - path: Root_M/RootPart1_M/RootPart2_M/Spine1_M/Spine1Part1_M/Spine1Part2_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Eye_R
         weight: 1
       - path: Root_M/RootPart1_M/RootPart2_M/Spine1_M/Spine1Part1_M/Spine1Part2_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Eye_R/EyeEnd_R
-        weight: 0
+        weight: 1
       - path: Root_M/RootPart1_M/RootPart2_M/Spine1_M/Spine1Part1_M/Spine1Part2_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/HeadEnd_M
+        weight: 1
+      - path: Root_M/RootPart1_M/RootPart2_M/Spine1_M/Spine1Part1_M/Spine1Part2_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/helmetVisor
         weight: 1
       - path: Root_M/RootPart1_M/RootPart2_M/Spine1_M/Spine1Part1_M/Spine1Part2_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Jaw_M
         weight: 1
       - path: Root_M/RootPart1_M/RootPart2_M/Spine1_M/Spine1Part1_M/Spine1Part2_M/Chest_M/Neck_M/NeckPart1_M/NeckPart2_M/Head_M/Jaw_M/JawEnd_M
-        weight: 0
+        weight: 1
       - path: Root_M/RootPart1_M/RootPart2_M/Spine1_M/Spine1Part1_M/Spine1Part2_M/Chest_M/Scapula_L
         weight: 1
       - path: Root_M/RootPart1_M/RootPart2_M/Spine1_M/Spine1Part1_M/Spine1Part2_M/Chest_M/Scapula_L/Shoulder_L
@@ -549,6 +621,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
