@@ -140,12 +140,35 @@ public class EnemyActions : MonoBehaviour {
     //LETHAL FORCES - find total amount of players in the game
     void SetTarget()
     {
-        targets = GameObject.FindGameObjectsWithTag("Player");
-        target = targets[Random.Range(0, targets.Length)];
+        //targets = GameObject.FindGameObjectsWithTag("Player");
+        //target = targets[Random.Range(0, targets.Length)];
+        //Debug.Log(FindClosestPlayer());
+        target = FindClosestPlayer(); //Lethal Forces - Set target to the closest player
     }
 
-	//LETHAL FORCES - Find the closest player (after a knockdown)
-	void ClosestPlayer(){
+    //Lethal Forces - Find the closest Player
+    public GameObject FindClosestPlayer()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Player");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
+
+    //LETHAL FORCES - Find the closest player (after a knockdown)
+    void ClosestPlayer(){
 		if (range == RANGE.CLOSERANGE)
 			SetTarget ();
 		else{
