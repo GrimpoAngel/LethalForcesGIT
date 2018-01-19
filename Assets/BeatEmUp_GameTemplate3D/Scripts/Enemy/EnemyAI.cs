@@ -134,7 +134,7 @@ public class EnemyAI : EnemyActions, IDamagable<DamageObject>{
 
 	//spread enemies out in z distance
 	void SetZSpread(){
-		ZSpread = (ZSpread - (float)(EnemyManager.enemyList.Count - 1) / 2f) * (capsule.radius*2) * zSpreadMultiplier;
+		ZSpread = (ZSpread - (float)(EnemyManager.enemyList.Count - 1) / 2f) * (capsule.radius*5) * zSpreadMultiplier; //radius was 2
 		if (ZSpread > attackRangeDistance) ZSpread = attackRangeDistance - 0.1f;
 	}
 

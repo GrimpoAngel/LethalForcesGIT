@@ -118,8 +118,6 @@ public class EnemyActions : MonoBehaviour {
 		//assign a name to this enemy
 		if(pickARandomName) enemyName = GetRandomName();
 
-        //set player as target
-        //if(target == null) target = GameObject.FindGameObjectWithTag("Player");
 
         //set player targets from array
         SetTarget();
@@ -140,9 +138,6 @@ public class EnemyActions : MonoBehaviour {
     //LETHAL FORCES - find total amount of players in the game
     void SetTarget()
     {
-        //targets = GameObject.FindGameObjectsWithTag("Player");
-        //target = targets[Random.Range(0, targets.Length)];
-        //Debug.Log(FindClosestPlayer());
         target = FindClosestPlayer(); //Lethal Forces - Set target to the closest player
     }
 
@@ -168,14 +163,14 @@ public class EnemyActions : MonoBehaviour {
     }
 
     //LETHAL FORCES - Find the closest player (after a knockdown)
-    void ClosestPlayer(){
-		if (range == RANGE.CLOSERANGE)
-			SetTarget ();
-		else{
-			SetTarget ();
-		}
-		return;
-	}
+ //   void ClosestPlayer(){
+	//	if (range == RANGE.CLOSERANGE)
+	//		SetTarget ();
+	//	else{
+	//		SetTarget ();
+	//	}
+	//	return;
+	//}
     #endregion
 
     #region Fixed Update
@@ -304,8 +299,11 @@ public class EnemyActions : MonoBehaviour {
 			int dir = d.inflictor.transform.position.x > transform.position.x? 1 : -1;
 			TurnToDir((DIRECTION)dir);
 
-			//check for a knockdown
-			if(d.knockDown) {
+            //LETHAL FORCES - When attacked - find the player who hit me
+            SetTarget();
+
+            //check for a knockdown
+            if (d.knockDown) {
 				StartCoroutine(KnockDownSequence(d.inflictor));
 				return;
 
@@ -327,7 +325,8 @@ public class EnemyActions : MonoBehaviour {
 
 				Invoke("Ready", hitRecoveryTime);
 				return;
-			}
+
+            }
 		}
 	}
 
@@ -379,7 +378,11 @@ public class EnemyActions : MonoBehaviour {
 		//visualize lookahead sphere
 		Gizmos.color = Color.yellow;
 		Vector3 offset = -moveDirection.normalized * lookaheadDistance;
-		Gizmos.DrawWireSphere (transform.position + capsule.center - offset, capsule.radius); 
+		Gizmos.DrawWireSphere (transform.position + capsule.center - offset, capsule.radius);
+
+        //visualize Sight Distance - LETHAL FORCES - added gizmo to see Sight Distance for Enemies
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, sightDistance);
 	}
 
 	#endif
@@ -448,7 +451,8 @@ public class EnemyActions : MonoBehaviour {
 		animator.SetAnimatorTrigger ("StandUp");
 		Invoke("Ready", standUpTime);
 
-		ClosestPlayer ();
+        //LETHAL FORCES - Find closest target after a knockdown
+		//ClosestPlayer ();
 	}
 
 	//ground hit

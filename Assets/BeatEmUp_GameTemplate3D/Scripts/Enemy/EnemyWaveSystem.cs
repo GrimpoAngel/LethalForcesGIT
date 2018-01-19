@@ -88,7 +88,6 @@ public class EnemyWaveSystem : MonoBehaviour {
         //set next collider as camera area restrictor
         if (EnemyWaves[currentWave].AreaCollider != null) { 
 			EnemyWaves[currentWave].AreaCollider.gameObject.SetActive(true);
-            //EnemyWaves[currentWave].BackAreaCollider.gameObject.SetActive(true); //LETHAL FORCES - turn on BackCollider for camera
         }
         //LETHAL FORCES - set back collider as area restrictor
         if (EnemyWaves[currentWave].BackAreaCollider != null)
