@@ -118,8 +118,13 @@ public class InputManager : MonoBehaviour {
 		if(Input.GetKey(JoypadJump)){
 			CombatInputEvent(INPUTACTION.JUMP);
 		}
+        //Lethal Forces - Added Defend Input Action for use in Pause Menu (B) button
+        if (Input.GetKey(JoypadDefend))
+        {
+            CombatInputEvent(INPUTACTION.DEFEND);
+        }
 
-		defendKeyDown = Input.GetKey(JoypadDefend);
+        defendKeyDown = Input.GetKey(JoypadDefend);
 	}
 
 	//enables or disables the touch screen interface

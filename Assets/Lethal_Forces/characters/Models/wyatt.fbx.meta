@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 1a5a6c1c38a0b0d4eaab4a76da793454
-timeCreated: 1515624699
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Ankle_L
     100002: Ankle_R
@@ -2160,10 +2158,17 @@ ModelImporter:
     13700008: geo_hair
     13700010: geo_hat
     13700012: geo_vest
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wyatt_A_M
+    second: {fileID: 2100000, guid: ac791b2b6e6c44c4fbbe17a2a7e13824, type: 2}
   materials:
     importMaterials: 1
     materialName: 1
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -2176,6 +2181,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -2200,6 +2207,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

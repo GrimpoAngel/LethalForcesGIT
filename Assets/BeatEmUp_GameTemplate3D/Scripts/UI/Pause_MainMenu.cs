@@ -10,7 +10,7 @@ public class Pause_MainMenu : MonoBehaviour {
 	public UIFader fader;
 	private bool restartInProgress = false;
 
-	private void OnEnable() {
+    private void OnEnable() {
 		InputManager.onCombatInputEvent += InputEvent;
         InputManager.onCombatInputEvent += InputEvent2;
     }
@@ -27,7 +27,7 @@ public class Pause_MainMenu : MonoBehaviour {
 
     private void InputEvent2(INPUTACTION action)
     {
-        if (action == INPUTACTION.KICK) ResumeGame();
+        if (action == INPUTACTION.DEFEND) ResumeGame();
     }
 
 	void ResumeGame(){

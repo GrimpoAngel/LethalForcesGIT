@@ -53,7 +53,12 @@ public class LevelInit : MonoBehaviour {
         {
             ShowPauseMenu();
         }
-        
+        if (Input.GetButton("Cancel"))
+        {
+            ShowPauseMenu();
+        }
+
+
     }
 
     //LETHAL FORCES - Pause Menu
