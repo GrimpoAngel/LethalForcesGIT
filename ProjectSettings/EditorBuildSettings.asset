@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/BeatEmUp_GameTemplate3D/_scenes/Title_Screen.unity
     guid: b2413cdc94c8f794aa2f4542adecea83
   - enabled: 1
-    path: Assets/BeatEmUp_GameTemplate3D/_scenes/Main_Menu.unity
-    guid: eea48ac62f4efed4db8f888514abdaa2
-  - enabled: 1
     path: Assets/BeatEmUp_GameTemplate3D/_scenes/LethalForces_Otron.unity
     guid: 0f752f755cb68be4b8e28291d70ec4b5
   - enabled: 1
