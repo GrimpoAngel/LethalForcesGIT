@@ -65,6 +65,6 @@ public class Pause_MainMenu : MonoBehaviour {
 	void GoToTitleScreen(){
 		restartInProgress = false;
 		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene("Title_Screen");
+        SceneManager.LoadScene("Main_Menu_Shows");
 	}
 }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/BeatEmUp_GameTemplate3D/_scenes/Main_Menu_Shows.unity
+    guid: 0348fc56ba57d6d4b9c2d8807cba2edc
+  - enabled: 0
     path: Assets/BeatEmUp_GameTemplate3D/_scenes/Title_Screen.unity
     guid: b2413cdc94c8f794aa2f4542adecea83
   - enabled: 1
