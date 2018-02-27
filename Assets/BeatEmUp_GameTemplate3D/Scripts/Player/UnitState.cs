@@ -12,6 +12,7 @@ public class UnitState : MonoBehaviour {
 public enum UNITSTATE {
 	IDLE,
 	WALK,
+    DASH, //Lethal Forces - adding dash as a Unitstate
 	JUMPING,
 	LAND,
 	JUMPKICK,

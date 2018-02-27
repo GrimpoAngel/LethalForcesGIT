@@ -41,13 +41,17 @@ public class PlayerMovement : MonoBehaviour {
 	private Vector3 fixedVelocity;
 	private bool updateVelocity;
 	private Plane[] frustrumPlanes; //camera view frustrum
-	public bool playerInCameraView; //true if the player bounds are inside the camera view
+
+    private float dashTime; //LETHAL FORCES -  Serialized in Reset() by WithinDashWindow.
+
+    public bool playerInCameraView; //true if the player bounds are inside the camera view
 	public float frustrumDistance = 1f;
 
 	//a list of states that this component can influence
 	private List<UNITSTATE> MovementStates = new List<UNITSTATE> {
 		UNITSTATE.IDLE,
 		UNITSTATE.WALK,
+        UNITSTATE.DASH, //LETHAL FORCES - Adding Dash
 		UNITSTATE.JUMPING,
 		UNITSTATE.JUMPKICK,
         UNITSTATE.JUMPPUNCH, //LETHAL FORCES - Adding JUMP PUNCH
@@ -80,7 +84,8 @@ public class PlayerMovement : MonoBehaviour {
 		if(!rb) Debug.LogError("No Rigidbody component found on " + gameObject.name);
 		if(!playerState) Debug.LogError("No UnitState component found on " + gameObject.name);
 		if(!capsule) Debug.LogError("No Capsule Collider found on " + gameObject.name);
-	}
+
+    }
 		
 	//physics update
 	void FixedUpdate() {
@@ -231,8 +236,14 @@ public class PlayerMovement : MonoBehaviour {
 			setPlayerState(UNITSTATE.IDLE);
 		}
 
-		//allow up/down movement when the player is at the edge of the screen
-		if(!PlayerInsideCamViewArea() && Mathf.Abs(inputDirection.y) > 0) {
+        //LETHAL FORCES - DASH
+        if (inputDirection.sqrMagnitude > 0)
+        {
+            Debug.Log("Move Forward");
+        }
+
+        //allow up/down movement when the player is at the edge of the screen
+        if (!PlayerInsideCamViewArea() && Mathf.Abs(inputDirection.y) > 0) {
 			Vector3 dirToCam = (transform.position - Camera.main.transform.position) * inputDirection.y;
 			SetVelocity(new Vector3(dirToCam.x, rb.velocity.y + Physics.gravity.y * Time.fixedDeltaTime, dirToCam.z));
 		}
